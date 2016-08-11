@@ -165,7 +165,8 @@ BOOL WINAPI GetSystemPowerStatus(LPSYSTEM_POWER_STATUS ps)
             {
                 // Calculate percentage
                 double battery_percentage =
-                    (ps->BatteryLifeTime / ps->BatteryFullLifeTime) * 100.0;
+                    ((double)ps->BatteryLifeTime /
+                     (double)ps->BatteryFullLifeTime) * 100.0;
 
                 ps->BatteryLifePercent = (unsigned char)floor(battery_percentage);
 
